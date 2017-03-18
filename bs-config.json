@@ -1,0 +1,8 @@
+{
+  "server": {
+    "baseDir": "codeschool_angular2",
+    "routes": {
+      "/node_modules": "node_modules"
+    }
+  }
+}
