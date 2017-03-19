@@ -6,7 +6,8 @@ exports.CARPARTS = [{
         "inStock": 5,
         "price": 4.99,
         "image": "/images/jim_rugg_street_fighter.jpg",
-        "featured": false
+        "featured": false,
+        "quantity": 0
     },
     {
         "id": 2,
@@ -15,6 +16,7 @@ exports.CARPARTS = [{
         "inStock": 4,
         "price": 9.99,
         "image": "/images/jim_rugg_super_dog.jpg",
-        "featured": true
+        "featured": true,
+        "quantity": 0
     }];
 //# sourceMappingURL=mocks.js.map

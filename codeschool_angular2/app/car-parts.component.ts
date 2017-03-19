@@ -23,4 +23,24 @@ export class CarPartsComponent{
 
 		return sum;
 	}
+
+	upQuantity(carPart:CarPart){
+		if (carPart.quantity < carPart.inStock){
+			carPart.quantity++;
+		}
+	}
+
+	downQuantity(carPart:CarPart){
+		if (carPart.quantity > 0){
+			carPart.quantity--;	
+		}
+	}
+
+	restrictTypeQuant(event, carPart:CarPart){
+		console.log("target val is " + event.target.value + " carPart.inStock is " + carPart.inStock);
+		if (event.target.value > carPart.inStock){
+			alert("Sorry, we only have " + carPart.inStock + " of this part in stock.");
+			carPart.quantity = carPart.inStock;
+		}
+	}
 }

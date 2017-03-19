@@ -9,6 +9,11 @@
 			<h2>{{carPart.name | uppercase}}</h2>
 			<p class="description">{{carPart.description}}</p>
 			<p class="price">{{carPart.price | currency:'EUR':true}}</p>
+			<div class="select-quantity">
+				<button class="increase" (click)="upQuantity(carPart)">+</button>
+				<input type="text" class="number" [(ngModel)]="carPart.quantity" (blur)="restrictTypeQuant($event, carPart)">
+				<button class="decrease" (click)="downQuantity(carPart)">-</button>
+			</div>
 			<p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in stock</p>
 			<p *ngIf="carPart.inStock === 0">Out of stock</p>
 		</div>

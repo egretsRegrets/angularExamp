@@ -24,6 +24,23 @@ var CarPartsComponent = (function () {
         }
         return sum;
     };
+    CarPartsComponent.prototype.upQuantity = function (carPart) {
+        if (carPart.quantity < carPart.inStock) {
+            carPart.quantity++;
+        }
+    };
+    CarPartsComponent.prototype.downQuantity = function (carPart) {
+        if (carPart.quantity > 0) {
+            carPart.quantity--;
+        }
+    };
+    CarPartsComponent.prototype.restrictTypeQuant = function (event, carPart) {
+        console.log("target val is " + event.target.value + " carPart.inStock is " + carPart.inStock);
+        if (event.target.value > carPart.inStock) {
+            alert("Sorry, we only have " + carPart.inStock + " of this part in stock.");
+            carPart.quantity = carPart.inStock;
+        }
+    };
     CarPartsComponent = __decorate([
         core_1.Component({
             selector: 'car-parts',
